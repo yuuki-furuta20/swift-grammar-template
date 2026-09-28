@@ -18,6 +18,8 @@
 ## 画面
 
 （スクリーンショットを貼る。GitHub の編集画面に画像をドラッグ＆ドロップすると貼れます。）
+<img width="1470" height="956" alt="スクリーンショット 2026-09-28 14 12 05" src="https://github.com/user-attachments/assets/d96e9deb-0574-4233-9907-3b38b95a4ba0" />
+
 
 ## 使った文法・技術
 
