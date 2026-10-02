@@ -1,4 +1,4 @@
-<img width="660" height="1434" alt="IMG_2153" src="https://github.com/user-attachments/assets/e5b1b6ee-000b-4d57-8045-d865a5bbc210" /># 日専祭アプリ：（音描、何食べようかな）
+># 日専祭アプリ：（音描、何食べようかな）
 
 > **チーム：** みつぼし
 > (26cm0129 古田裕稀 ★リーダー)
