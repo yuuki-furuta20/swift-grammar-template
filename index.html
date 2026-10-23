@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>音描 -ongaku-</title>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#5c2b33;--sub:#9a5a72;--pink:#ff78b0;--sky:#4dd9ed;--yellow:#ffe04d;--mint:#80e699;--cv:#fffdf8;--stick:#C19A6B;--f:.55;--S:calc(190px*var(--f));--D:clamp(212px,54.5vw,289px);--Wc:min(calc(94vw - 26px),494px,max(160px,calc(100vh - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px) - 246px - var(--S)*1.59)));--PW:calc(var(--Wc) + 26px)}
+@supports(height:100dvh){:root{--Wc:min(calc(94vw - 26px),494px,max(160px,calc(100dvh - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px) - 246px - var(--S)*1.59)))}}
+*{box-sizing:border-box}
+html{min-height:100%;background:var(--g3,#fff2b3)}
+body{margin:0;color:var(--ink);font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Hiragino Sans",sans-serif;overflow-x:hidden;
+background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect x='16.0' y='27.5' width='16' height='5' rx='2.5' transform='rotate(30 24 30)' fill='%23ffffff' fill-opacity='0.9'/><rect x='91.0' y='15.5' width='14' height='5' rx='2.5' transform='rotate(-40 98 18)' fill='%234dd9ed' fill-opacity='0.9'/><rect x='151.0' y='41.5' width='18' height='5' rx='2.5' transform='rotate(70 160 44)' fill='%23ffe04d' fill-opacity='0.9'/><rect x='52.5' y='83.5' width='15' height='5' rx='2.5' transform='rotate(-20 60 86)' fill='%2380e699' fill-opacity='0.9'/><rect x='123.5' y='97.5' width='17' height='5' rx='2.5' transform='rotate(50 132 100)' fill='%23ff9e47' fill-opacity='0.9'/><rect x='13.0' y='131.5' width='14' height='5' rx='2.5' transform='rotate(-60 20 134)' fill='%23ffffff' fill-opacity='0.9'/><rect x='79.0' y='147.5' width='18' height='5' rx='2.5' transform='rotate(15 88 150)' fill='%23ffe04d' fill-opacity='0.9'/><rect x='162.5' y='157.5' width='15' height='5' rx='2.5' transform='rotate(-35 170 160)' fill='%234dd9ed' fill-opacity='0.9'/><rect x='42.0' y='179.5' width='16' height='5' rx='2.5' transform='rotate(60 50 182)' fill='%2380e699' fill-opacity='0.9'/><rect x='117.0' y='183.5' width='14' height='5' rx='2.5' transform='rotate(-10 124 186)' fill='%23ffffff' fill-opacity='0.9'/><rect x='180.0' y='103.5' width='12' height='5' rx='2.5' transform='rotate(20 186 106)' fill='%23ffe04d' fill-opacity='0.9'/></svg>") 0 0/200px 200px,linear-gradient(180deg,var(--g1,#ffe3f1) 0%,var(--g2,#ffeede) 55%,var(--g3,#fff2b3) 100%);
+min-height:100vh;min-height:100dvh;
+display:flex;flex-direction:column;align-items:center;padding:calc(env(safe-area-inset-top,0px) + 52px) 14px calc(env(safe-area-inset-bottom,0px) + 12px);gap:10px;justify-content:space-evenly}
+body::before{content:"";position:fixed;left:0;right:0;top:0;height:calc(var(--D)*.353 + env(safe-area-inset-top,0px) + 4px);z-index:5;pointer-events:none;background:var(--drip,url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='170' height='60'><rect x='0' y='-10' width='22' height='29' rx='11.0' fill='%23ff78b0'/><rect x='18' y='-10' width='18' height='21' rx='9.0' fill='%23ff78b0'/><rect x='40' y='-10' width='24' height='43' rx='12.0' fill='%23ff78b0'/><rect x='66' y='-10' width='16' height='23' rx='8.0' fill='%23ff78b0'/><rect x='86' y='-10' width='22' height='35' rx='11.0' fill='%23ff78b0'/><rect x='112' y='-10' width='18' height='19' rx='9.0' fill='%23ff78b0'/><rect x='130' y='-10' width='24' height='39' rx='12.0' fill='%23ff78b0'/><rect x='154' y='-10' width='16' height='25' rx='8.0' fill='%23ff78b0'/><rect x='0' y='-10' width='22' height='26' rx='11.0' fill='%23ffffff'/><rect x='18' y='-10' width='18' height='18' rx='9.0' fill='%23ffffff'/><rect x='40' y='-10' width='24' height='40' rx='12.0' fill='%23ffffff'/><rect x='66' y='-10' width='16' height='20' rx='8.0' fill='%23ffffff'/><rect x='86' y='-10' width='22' height='32' rx='11.0' fill='%23ffffff'/><rect x='112' y='-10' width='18' height='16' rx='9.0' fill='%23ffffff'/><rect x='130' y='-10' width='24' height='36' rx='12.0' fill='%23ffffff'/><rect x='154' y='-10' width='16' height='22' rx='8.0' fill='%23ffffff'/></svg>")) repeat-x 0 env(safe-area-inset-top,0px)/var(--D) auto,linear-gradient(#fff,#fff) 0 0/100% calc(env(safe-area-inset-top,0px) + 1px) no-repeat,linear-gradient(var(--dc,var(--pink)),var(--dc,var(--pink))) 0 0/100% calc(env(safe-area-inset-top,0px) + 4px) no-repeat}
+.logo{position:relative;display:flex;flex-direction:column;align-items:center;gap:10px}
+.pop{display:flex;flex-direction:column;align-items:center;transform:rotate(-5deg)}
+.head{position:relative;width:var(--S);height:var(--S);border-radius:50%;overflow:hidden;border:calc(var(--S)*.035) solid var(--ink);box-shadow:0 calc(var(--S)*.045) 0 var(--ink);z-index:1;background:#fff}
+.swirl{position:absolute;inset:0;background:repeating-conic-gradient(from 90deg,var(--pink) 0 22.5deg,#fff 22.5deg 45deg,var(--sky) 45deg 67.5deg,#fff 67.5deg 90deg);animation:spin 14s linear infinite}
+.disc{position:absolute;left:50%;top:50%;width:calc(var(--S)*.72);height:calc(var(--S)*.72);transform:translate(-50%,-50%);background:#fff;border:calc(var(--S)*.02) solid var(--ink);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:calc(var(--S)*.27);font-weight:900;line-height:1;color:var(--ink)}
+.head::after{content:"";position:absolute;width:calc(var(--S)*.2);height:calc(var(--S)*.07);left:calc(50% - var(--S)*.375);top:calc(50% - var(--S)*.366);border-radius:50%;background:rgba(255,255,255,.6);transform:rotate(-40deg)}
+.stick{position:relative;width:calc(var(--S)*.09);height:calc(var(--S)*.5);margin-top:calc(var(--S)*-.1);background:var(--stick);border:calc(var(--S)*.025) solid var(--ink);border-radius:calc(var(--S)*.05)}
+.bow{position:absolute;left:50%;top:calc(var(--S)*.11);width:0;height:0}
+.bow i{position:absolute;top:calc(var(--S)*-.05);width:calc(var(--S)*.2);height:calc(var(--S)*.1);background:var(--yellow);border:calc(var(--S)*.02) solid var(--ink);border-radius:999px}
+.bow i:nth-child(1){left:calc(var(--S)*-.2);transform:rotate(-22deg)}.bow i:nth-child(2){left:0;transform:rotate(22deg)}
+.bow b{position:absolute;left:calc(var(--S)*-.045);top:calc(var(--S)*-.045);width:calc(var(--S)*.09);height:calc(var(--S)*.09);background:var(--pink);border:calc(var(--S)*.02) solid var(--ink);border-radius:50%}
+@keyframes spin{to{transform:rotate(360deg)}}
+.ongaku{white-space:nowrap;font-weight:900;font-size:calc(var(--S)*.158);letter-spacing:.18em;padding-left:.18em;color:var(--ink);text-shadow:0 .07em 0 rgba(255,255,255,.9)}
+.deco{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.deco svg{position:absolute;height:auto;pointer-events:auto;cursor:pointer;-webkit-tap-highlight-color:transparent;-webkit-user-select:none;user-select:none}
+body>*{position:relative;z-index:1}
+.deco{position:fixed}
+p.sub{margin:0;color:var(--sub);font-size:.95rem;font-weight:900;text-align:center}
+.panel{background:#fff;border:3px solid var(--ink);box-shadow:0 5px 0 var(--ink);border-radius:26px;padding:10px;width:var(--PW)}
+canvas{width:100%;aspect-ratio:1;display:block;border-radius:16px;background:var(--cv);box-shadow:inset 0 0 0 2px rgba(92,43,51,.14);touch-action:manipulation}
+button{font:inherit;font-weight:900;font-size:1.1rem;letter-spacing:.06em;color:var(--ink);background:linear-gradient(180deg,rgba(255,255,255,.6),rgba(255,255,255,0) 55%),var(--yellow);border:3px solid var(--ink);box-shadow:0 5px 0 var(--ink);border-radius:999px;padding:15px;width:var(--PW);cursor:pointer;transition:transform .08s,box-shadow .08s}
+button:active{transform:translateY(4px);box-shadow:0 1px 0 var(--ink)}
+.row{display:flex;gap:12px;width:var(--PW)}.row #play{flex:1;width:auto}
+.ic{width:58px!important;padding:0!important;background:#fff!important;font-size:1.3rem!important;letter-spacing:0!important;opacity:.7}
+.ic.on{opacity:1;background:linear-gradient(180deg,rgba(255,255,255,.6),rgba(255,255,255,0) 55%),var(--mint)!important}
+#empty{display:none;text-align:center;line-height:1.9;padding:30px 10px;font-weight:900}
+/* 曲を作っている間のアニメーション：ボタンがシマシマに流れ、キャンディが速く回り、音符がはねる */
+@keyframes stripe{to{background-position:0 0,40px 0}}
+@keyframes hop{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+#play.busy{background-image:linear-gradient(180deg,rgba(255,255,255,.6),rgba(255,255,255,0) 55%),linear-gradient(-45deg,var(--yellow) 25%,#fff6bf 25%,#fff6bf 50%,var(--yellow) 50%,var(--yellow) 75%,#fff6bf 75%);background-size:100% 100%,40px 40px;animation:stripe .7s linear infinite}
+body.making .swirl{animation-duration:1.1s}
+#msg .n{display:inline-block;font-size:1.3rem;animation:hop .6s ease-in-out infinite}
+#msg .n:nth-child(2){animation-delay:.15s}#msg .n:nth-child(3){animation-delay:.3s}
+@media(prefers-reduced-motion:reduce){#play.busy,#msg .n,body.making .swirl{animation:none}}
+#msg{font-size:.85rem;color:var(--ink);text-shadow:0 1.5px 0 #fff;font-weight:900;text-align:center;min-height:1.2em}
+</style><script>
+// 背景を、ひらくたびにランダムで3種類からえらぶ（アプリのトップ画面と同じ：いちごミルク／ミントソーダ／レモンオレンジ）
+(function(){
+  var V=[null,
+    {g:['#dbf7ed','#e0f2ff','#ede6ff'],c:'4dd9ed',d:[[0,26,24],[22,22,20],[42,28,30],[66,20,19],[84,26,27],[106,22,22],[124,28,31],[148,22,25]]},
+    {g:['#fff7c7','#ffedd1','#ffdbc2'],c:'ff9e47',d:[[0,12,40],[10,10,22],[18,14,48],[30,10,26],[38,12,36],[48,10,20],[56,14,50],[68,10,28],[76,12,44],[86,10,22],[94,14,38],[106,10,26],[114,12,46],[124,10,20],[132,14,42],[144,10,24],[152,12,34],[162,8,24]]}];
+  var i=Math.floor(Math.random()*3);if(!i)return;
+  var v=V[i],r=document.documentElement.style,t="<svg xmlns='http://www.w3.org/2000/svg' width='170' height='60'>";
+  r.setProperty('--g1',v.g[0]);r.setProperty('--g2',v.g[1]);r.setProperty('--g3',v.g[2]);r.setProperty('--dc','#'+v.c);
+  v.d.forEach(function(a){t+="<rect x='"+a[0]+"' y='-10' width='"+a[1]+"' height='"+(a[2]+3)+"' rx='"+a[1]/2+"' fill='%23"+v.c+"'/>";});
+  v.d.forEach(function(a){t+="<rect x='"+a[0]+"' y='-10' width='"+a[1]+"' height='"+a[2]+"' rx='"+a[1]/2+"' fill='%23ffffff'/>";});
+  r.setProperty('--drip','url("data:image/svg+xml;utf8,'+t+'</svg>")');
+})();
+</script>
+</head><body>
+<div id="src" hidden><svg class='sw s1' viewBox='0 0 100 100'><ellipse cx='50' cy='57' rx='42' ry='42' fill='#5c2b33'/><circle cx='50' cy='50' r='42' fill='#f8c780' stroke='#5c2b33' stroke-width='5'/><g fill='#73403a'><ellipse cx='34' cy='36' rx='8' ry='6.5'/><ellipse cx='66' cy='30' rx='7' ry='5.5'/><ellipse cx='52' cy='52' rx='8' ry='6.5'/><ellipse cx='32' cy='66' rx='7' ry='5.5'/><ellipse cx='70' cy='64' rx='8' ry='6.5'/><ellipse cx='50' cy='78' rx='6' ry='5'/></g><ellipse cx='32' cy='24' rx='13' ry='5.5' fill='#fff' fill-opacity='.55'/></svg><svg class='sw s2' viewBox='232 118 506 740'><rect x='280' y='158' width='400' height='290' rx='70' fill='#5c2b33'/><rect x='267' y='463' width='426' height='370' fill='#5c2b33'/><rect x='280' y='142' width='400' height='290' rx='70' fill='#5c2b33' stroke='#5c2b33' stroke-width='30' stroke-linejoin='round'/><polygon points='257,382 327,408 353,368 396,418 437,388 483,410 483,383 520,405 546,383 570,407 608,370 627,397 645,378 662,408 712,382 693,447 267,447' fill='#5c2b33' stroke='#5c2b33' stroke-width='30' stroke-linejoin='round'/><rect x='267' y='447' width='426' height='370' fill='#5c2b33' stroke='#5c2b33' stroke-width='30' stroke-linejoin='round'/><rect x='280' y='142' width='400' height='290' rx='70' fill='#7f3510'/><rect x='285' y='158' width='372' height='274' rx='62' fill='#bf5015'/><rect x='325' y='183' width='80' height='102' rx='30' fill='#7f3510'/><rect x='330' y='196' width='62' height='80' rx='24' fill='#682a0b'/><rect x='325' y='310' width='80' height='102' rx='30' fill='#7f3510'/><rect x='330' y='323' width='62' height='80' rx='24' fill='#682a0b'/><rect x='438' y='183' width='80' height='102' rx='30' fill='#7f3510'/><rect x='443' y='196' width='62' height='80' rx='24' fill='#682a0b'/><rect x='438' y='310' width='80' height='102' rx='30' fill='#7f3510'/><rect x='443' y='323' width='62' height='80' rx='24' fill='#682a0b'/><rect x='549' y='183' width='80' height='102' rx='30' fill='#7f3510'/><rect x='554' y='196' width='62' height='80' rx='24' fill='#682a0b'/><rect x='549' y='310' width='80' height='102' rx='30' fill='#7f3510'/><rect x='554' y='323' width='62' height='80' rx='24' fill='#682a0b'/><polygon points='257,382 327,408 353,368 396,418 437,388 483,410 483,383 520,405 546,383 570,407 608,370 627,397 645,378 662,408 712,382 693,447 267,447' fill='#757575'/><polygon points='262,396 328,432 357,385 397,446 436,406 483,440 483,402 514,426 540,397 568,436 601,386 623,425 637,396 652,430 686,402 676,447 268,447' fill='#d1d1d1'/><rect x='267' y='447' width='426' height='370' fill='#c00000'/><rect x='267' y='447' width='389' height='370' fill='#ff0000'/><rect x='571' y='455' width='8' height='6' fill='#fff'/><rect x='571' y='485.0' width='8' height='32' fill='#fff'/><rect x='571' y='543.5' width='8' height='32' fill='#fff'/><rect x='571' y='602.0' width='8' height='32' fill='#fff'/><rect x='571' y='660.5' width='8' height='32' fill='#fff'/><rect x='571' y='719.0' width='8' height='32' fill='#fff'/><rect x='571' y='777.5' width='8' height='32' fill='#fff'/><rect x='598' y='455' width='8' height='6' fill='#fff'/><rect x='598' y='485.0' width='8' height='32' fill='#fff'/><rect x='598' y='543.5' width='8' height='32' fill='#fff'/><rect x='598' y='602.0' width='8' height='32' fill='#fff'/><rect x='598' y='660.5' width='8' height='32' fill='#fff'/><rect x='598' y='719.0' width='8' height='32' fill='#fff'/><rect x='598' y='777.5' width='8' height='32' fill='#fff'/><text transform='translate(402 645) rotate(-90)' text-anchor='middle' dominant-baseline='central' font-family='Georgia,serif' font-weight='900' font-size='100' fill='#fff'>choc</text></svg><svg class='sw s3' viewBox='-5 -5 110 108'><ellipse cx='50' cy='70.5' rx='50' ry='28.04' fill='#5c2b33' /><ellipse cx='50' cy='64.49' rx='50' ry='28.04' fill='#5c2b33' stroke='#5c2b33' stroke-width='5.6'/><ellipse cx='50' cy='57.94' rx='50' ry='24.3' fill='#5c2b33' stroke='#5c2b33' stroke-width='5.6'/><ellipse cx='50' cy='39.25' rx='50' ry='24.3' fill='#5c2b33' stroke='#5c2b33' stroke-width='5.6'/><ellipse cx='50' cy='28.04' rx='50' ry='28.04' fill='#5c2b33' stroke='#5c2b33' stroke-width='5.6'/><ellipse cx='50' cy='64.49' rx='50' ry='28.04' fill='#ffb8de' /><ellipse cx='50' cy='57.94' rx='50' ry='24.3' fill='#ee94c2' /><ellipse cx='50' cy='57.95' rx='40.19' ry='14.96' fill='#fffdd9' /><ellipse cx='50' cy='39.25' rx='50' ry='24.3' fill='#ee94c2' /><ellipse cx='50' cy='28.04' rx='50' ry='28.04' fill='#ffb8de' /></svg><svg class='sw s4' viewBox='-5 -5 110 108'><ellipse cx='50' cy='70.5' rx='50' ry='28.04' fill='#5c2b33' /><ellipse cx='50' cy='64.49' rx='50' ry='28.04' fill='#5c2b33' stroke='#5c2b33' stroke-width='5.6'/><ellipse cx='50' cy='57.94' rx='50' ry='24.3' fill='#5c2b33' stroke='#5c2b33' stroke-width='5.6'/><ellipse cx='50' cy='39.25' rx='50' ry='24.3' fill='#5c2b33' stroke='#5c2b33' stroke-width='5.6'/><ellipse cx='50' cy='28.04' rx='50' ry='28.04' fill='#5c2b33' stroke='#5c2b33' stroke-width='5.6'/><ellipse cx='50' cy='64.49' rx='50' ry='28.04' fill='#9ed6f7' /><ellipse cx='50' cy='57.94' rx='50' ry='24.3' fill='#73b3e0' /><ellipse cx='50' cy='57.95' rx='40.19' ry='14.96' fill='#fffdd9' /><ellipse cx='50' cy='39.25' rx='50' ry='24.3' fill='#73b3e0' /><ellipse cx='50' cy='28.04' rx='50' ry='28.04' fill='#9ed6f7' /></svg><svg class='sw s5' viewBox='-62 -60 124 124'><polygon points='-5.0,-45.0 12.0,-24.4 38.3,-20.0 29.0,5.0 38.3,30.0 12.0,34.4 -5.0,55.0 -22.0,34.4 -48.3,30.0 -39.0,5.0 -48.3,-20.0 -22.0,-24.4' fill='#5c2b33' stroke='#5c2b33' stroke-width='7.6' stroke-linejoin='round'/><polygon points='0.0,-50.0 17.0,-29.4 43.3,-25.0 34.0,0.0 43.3,25.0 17.0,29.4 0.0,50.0 -17.0,29.4 -43.3,25.0 -34.0,0.0 -43.3,-25.0 -17.0,-29.4' fill='#5c2b33' stroke='#5c2b33' stroke-width='7.6' stroke-linejoin='round'/><polygon points='-5.0,-45.0 12.0,-24.4 38.3,-20.0 29.0,5.0 38.3,30.0 12.0,34.4 -5.0,55.0 -22.0,34.4 -48.3,30.0 -39.0,5.0 -48.3,-20.0 -22.0,-24.4' fill='#f2a57f'/><polygon points='0.0,-50.0 17.0,-29.4 43.3,-25.0 34.0,0.0 43.3,25.0 17.0,29.4 0.0,50.0 -17.0,29.4 -43.3,25.0 -34.0,0.0 -43.3,-25.0 -17.0,-29.4' fill='#f7c8b0'/><ellipse cx='-24' cy='-12' rx='4' ry='5' fill='#f2a57f'/><ellipse cx='0' cy='-12' rx='4' ry='5' fill='#f2a57f'/><ellipse cx='24' cy='-12' rx='4' ry='5' fill='#f2a57f'/><ellipse cx='-24' cy='12' rx='4' ry='5' fill='#f2a57f'/><ellipse cx='0' cy='12' rx='4' ry='5' fill='#f2a57f'/><ellipse cx='24' cy='12' rx='4' ry='5' fill='#f2a57f'/></svg><svg class='sw s6' viewBox='-31 -29 62 132'><circle cx='0' cy='3' r='24' fill='#5c2b33'/><circle cx='0' cy='0' r='24' fill='#5c2b33' stroke='#5c2b33' stroke-width='6'/><rect x='-2.2' y='20' width='4.4' height='78' rx='2.2' fill='#5c2b33' stroke='#5c2b33' stroke-width='6' stroke-linejoin='round'/><rect x='-2.2' y='20' width='4.4' height='78' rx='2.2' fill='#fff'/><circle cx='0' cy='0' r='24' fill='#ffabd8'/><ellipse cx='0' cy='0' rx='24' ry='4.4' fill='#ff93cc'/><ellipse cx='9' cy='-12' rx='3.4' ry='3.2' fill='#fff' fill-opacity='.6'/><ellipse cx='5' cy='9' rx='2.6' ry='10' fill='#fff' fill-opacity='.45' transform='rotate(12 5 9)'/></svg></div>
+<div class="logo">
+
+
+
+<div class="pop"><div class="head"><div class="swirl"></div><div class="disc">音描</div></div><div class="stick"><div class="bow"><i></i><i></i><b></b></div></div></div>
+<div class="ongaku">-ongaku-</div>
+</div>
+<p class="sub" id="info">あなたがつくった えと きょく</p>
+<div class="panel" id="art"><canvas id="c" width="640" height="640"></canvas></div>
+<div class="row"><button id="loop" class="ic on" title="くりかえし" aria-label="くりかえし">🔁</button><button id="play">▶ きょくをきく</button></div>
+<div id="msg"></div>
+<div class="panel" id="empty">QRコードをよみとると、<br>ここに えと きょくが ひょうじされます。</div>
+<script id="core">
+const COL=[null,'#ff3b30','#ffbfcc','#ffff00','#80ccff','#007aff','#34c759','#ccb3e6','#ff9900','#fae0c7','#cc8033','#8e8e93','#000000','#ff66c4','#16c7a8','#8a5cff'];
+const TIMBRE=[null,['square',0],['triangle',12],['triangle',12],['sine',12],['square',0],['sine',0],['sawtooth',0],['triangle',0],['sine',0],['triangle',-12],['sine',-12],['sawtooth',-12]];
+const STY=[
+ {n:'🎹 ポップ',sc:[0,2,4,5,7,9,11],mul:1,inst:'epiano',oct:0,hop:2,len:3,ex:[],dr:1,ec:0,ef:0},
+ {n:'🎸 ロック',sc:[0,3,5,6,7,10],mul:1.15,inst:'guitar',oct:-12,hop:2,len:2,ex:[7,12],dr:2,ec:0,ef:0,sm:.004},
+ {n:'🎍 和風',sc:[0,2,3,7,8],mul:.8,inst:'koto',oct:0,hop:2,len:8,ex:[12],dr:3,ec:4,ef:.35,pc:0,sm:.03},
+ {n:'👾 8bit',sc:[0,2,4,7,9],mul:1.3,inst:'chip',oct:12,hop:1,len:1.5,ex:[],dr:4,ec:0,ef:0},
+ {n:'🌺 ハワイアン',sc:[0,2,4,5,7,9,11],mul:.88,inst:'ukulele',oct:0,hop:2,len:4,ex:[12],dr:6,ec:3,ef:.2,sm:.014,sw:.6,li:'steel'},
+ {n:'🎠 オルゴール',sc:[0,2,4,5,7,9,11],mul:.85,inst:'musicbox',oct:0,hop:2,len:6,ex:[],dr:0,ec:4,ef:.3,pc:0}];
+const BR={sine:.3,triangle:.5,square:.7,sawtooth:1};
+const BPM=[90,120,160];
+const N=64,H=12,SR=44100;
+let grid=new Uint8Array(N*N),sty=0,tp=1;
+function orient(g,d){
+  if(d===0)return g;
+  const o=new Uint8Array(N*N);
+  for(let y=0;y<N;y++)for(let x=0;x<N;x++){const v=g[y*N+x];if(!v)continue;
+    let tx,ty;
+    if(d===1){tx=y;ty=N-1-x;}            // 上が先。左が低い音、右が高い音
+    else if(d===2){tx=N-1-x;ty=y;}       // 右が先
+    else{tx=N-1-y;ty=N-1-x;}             // 下が先。左が低い音、右が高い音
+    o[ty*N+tx]=v;}
+  return o;
+}
+function hsl(hex){const r=parseInt(hex.slice(1,3),16)/255,g=parseInt(hex.slice(3,5),16)/255,b=parseInt(hex.slice(5,7),16)/255,mx=Math.max(r,g,b),mn=Math.min(r,g,b),l=(mx+mn)/2;let h=0;
+  if(mx!==mn){const d=mx-mn;h=mx===r?(g-b)/d+(g<b?6:0):mx===g?(b-r)/d+2:(r-g)/d+4;h*=60;}return[h,l];}
+function timbre(v){if(v<=12)return TIMBRE[v];const[h,l]=hsl(COL[v]);return[['sine','triangle','square','sawtooth'][Math.floor(h/90)%4],l>.65?12:l<.35?-12:0];}
+function dominantRoot(){const c=new Array(16).fill(0);for(const v of grid)if(v)c[v]++;let m=0,b=0;for(let i=1;i<16;i++)if(c[i]>0&&c[i]>=b){m=i;b=c[i];}return m?(m-1)%12:0;}
+function dominantColor(a,b){const c=new Array(16).fill(0);for(let y=0;y<N;y++)for(let x=a;x<b;x++){const v=grid[y*N+x];if(v)c[v]++;}let m=0,bb=0;for(let i=1;i<16;i++)if(c[i]>0&&c[i]>=bb){m=i;bb=c[i];}return m;}
+// 4小節(16列ずつ)ごとの根音のずらし幅。アプリ(Swift)の barShifts と同じ
+function barShifts(){const sc=STY[sty].sc,n=sc.length,deg=m=>sc[(m-1)%n],g=dominantColor(0,N);if(!g)return[0,0,0,0];const bw=N/4;
+  return[0,1,2,3].map(k=>{const m=dominantColor(k*bw,(k+1)*bw);return m?deg(m)-deg(g):0;});}
+function midiOf(row,st,root){const s=st.sc,n=s.length*3,i=Math.min(n-1,Math.max(0,Math.floor((N-1-row)/N*n)));return 48+root+12*Math.floor(i/s.length)+s[i%s.length]+st.oct;}
+function columnTops(){const t=[];for(let x=0;x<N;x++){let r=-1;for(let y=0;y<N;y++)if(grid[y*N+x]){r=y;break;}t.push(r);}return t;}
+// 絵全体でたくさん使われた色の上位4色(色ごとのパートの順位。同数ならばんごうが小さい方が上)
+function colorRank(ex=[]){const c=new Array(16).fill(0);for(const v of grid)if(v)c[v]++;
+  return c.map((n,i)=>[n,i]).filter(a=>a[0]>0&&!ex.includes(a[1])).sort((a,b)=>b[0]-a[0]||a[1]-b[1]).slice(0,4).map(a=>a[1]);}
+// 打楽器の担当色：色→打楽器(0タンバリン 1クラップ 2シェイカー 3ウッドブロック 4カウベル)。
+// 使えば鳴る(順位には関係なし)。ただし、その色が PMIN ドット以上あるときだけ。
+// 担当色しかない絵(ほかの色が PMIN 未満)は、打楽器にせず今まで通り音程のある音にする。オルゴールは打楽器なし。
+const PC={3:0,2:1,4:2,6:3,8:4},PMIN=40;
+const PPAT=[p=>p%2===0,p=>p%4===2,p=>p%2===1,p=>p%4===3,p=>p===5||p===13];
+function percColors(){
+  if(STY[sty].pc===0)return[];
+  const c=new Array(16).fill(0);for(const v of grid)if(v)c[v]++;
+  let other=false;for(let i=1;i<16;i++)if(!(i in PC)&&c[i]>=PMIN)other=true;
+  if(!other)return[];
+  return Object.keys(PC).map(Number).filter(v=>c[v]>=PMIN);}
+// 脇役パート(アルペジオ・きらきら)の楽器。アプリ(Swift)の companion と同じ
+const COMP={epiano:'musicbox',guitar:'guitar',koto:'bell',chip:'chip',ukulele:'ukulele',musicbox:'epiano',bell:'bell',steel:'steel'};
+function groupNotes(x,h,root,ct,rank){
+  const st=STY[sty],tops=[],bots=[],topC={},cnt={},sum={};let ink=0;
+  for(let xx=x;xx<Math.min(N,x+h);xx++){let top=-1,bot=-1;
+    for(let y=0;y<N;y++){const v=grid[y*N+xx];if(v){if(top<0){top=y;topC[v]=(topC[v]||0)+1;}bot=y;ink++;cnt[v]=(cnt[v]||0)+1;sum[v]=(sum[v]||0)+y;}}
+    if(top>=0){tops.push(top);bots.push(bot);}}
+  if(!tops.length)return[];
+  const avg=a=>a.reduce((p,q)=>p+q,0)/a.length,vol=.5+.5*Math.min(1,ink/(h*24)),out=[];
+  const lc=+Object.keys(topC).sort((a,b)=>topC[b]-topC[a]||a-b)[0];
+  const nt=(midi,br,g,len=1,delay=0,alt=false,lead=false)=>({midi,br,g,len,delay,alt,lead});
+  // 輪郭の上下の変化量：大きいほどメロディにアクセント、大きく跳ぶときは装飾音
+  let jump=0;for(let xx=x;xx<Math.min(N,x+h);xx++)if(xx>0&&ct[xx]>=0&&ct[xx-1]>=0)jump=Math.max(jump,Math.abs(ct[xx]-ct[xx-1]));
+  let leadDelay=0;
+  if(x>0&&ct[x]>=0&&ct[x-1]>=0&&Math.abs(ct[x]-ct[x-1])>=8){
+    const rps=N/(st.sc.length*3),gr=avg(tops)+(ct[x-1]<ct[x]?-rps:rps);
+    out.push(nt(Math.max(36,midiOf(gr,st,root)),BR[timbre(lc)[0]],.6*vol,.3,0,false,true));leadDelay=.5;}
+  out.push(nt(Math.max(36,midiOf(avg(tops),st,root)),BR[timbre(lc)[0]],vol*(jump>=4?1.25:1)*(st.li?1.15:1),st.li?.8:1,leadDelay,false,true));   // メロディ専用の楽器があるときは、少し大きく、のびやかに
+  // 色ごとのパート
+  const gi=Math.floor(x/h);
+  rank.forEach((v,i)=>{const c=cnt[v];if(!c)return;const t=timbre(v),m=Math.max(36,midiOf(sum[v]/c,st,root)+t[1]),b=BR[t[0]];
+    if(i<2)out.push(nt(m,b,.45*vol));
+    else if(i===2){out.push(nt(m,b,.3*vol,.45,0,true));out.push(nt(m+12,b,.25*vol,.45,Math.max(1,Math.floor(h/2)),true));}
+    else if(gi%2===1)out.push(nt(m+12,b,.3*vol,.35,0,true));});
+  if(gi%2===0)out.push(nt(Math.max(36,midiOf(avg(bots),st,root)-12),.4,.65*vol));
+  return out;
+}
+const TP=2*Math.PI,saw=p=>2*(p-Math.floor(p))-1,tri=p=>4*Math.abs(p-Math.floor(p)-.5)-1;
+// 楽器：f=周波数, br=明るさ(色で変わる), dur=音の長さ(秒)
+function voice(inst,f,br,dur){
+  if(inst==='epiano')return t=>{ // エレピ（FM合成）
+    const idx=(1+2.5*br)*Math.exp(-5*t/dur),e=Math.min(t/.004,1)*Math.exp(-3.2*t/dur);
+    return .16*e*(Math.sin(TP*f*t+idx*Math.sin(TP*f*t))+.25*Math.sin(TP*f*14*t)*Math.exp(-30*t));};
+  if(inst==='guitar'){ // エレキギター：ひずませた弦＋ピックの音。短く切る(パームミュートのザクザク)
+    const n1=Math.max(2,Math.round(SR/f)),n2=Math.max(2,Math.round(SR/(f*1.004))),b1=new Float32Array(n1),b2=new Float32Array(n2);let i1=0,i2=0,lp=0,cab=0,cab2=0;
+    const d=Math.min(.9995,0.9985+.002*br),c=1-Math.exp(-TP*2600/SR);
+    for(let k=0;k<n1;k++){lp+=.9*((Math.random()*2-1)-lp);b1[k]=lp*1.5;}
+    for(let k=0;k<n2;k++){lp+=.9*((Math.random()*2-1)-lp);b2[k]=lp*1.5;}
+    return t=>{const y1=b1[i1];b1[i1]=d*.5*(y1+b1[(i1+1)%n1]);i1=(i1+1)%n1;
+      const y2=b2[i2];b2[i2]=d*.5*(y2+b2[(i2+1)%n2]);i2=(i2+1)%n2;
+      const raw=.5*(y1+y2),y=Math.tanh(16*raw+2.5*raw*raw);cab+=c*(y-cab);cab2+=c*(cab-cab2);
+      const pick=t<.006?(Math.random()*2-1)*(1-t/.006)*.25:0;
+      return .24*Math.min(t/.001,1)*Math.exp(-3.2*t/dur)*(cab2+pick);};}
+  if(inst==='koto'){ // 琴：爪ではじく位置の芯と「コッ」という爪の音、のびやかな余韻
+    const n=Math.max(2,Math.round(SR/f)),raw=new Float32Array(n),b=new Float32Array(n),pp=Math.max(1,Math.floor(n/6));let i=0;const d=.995+.0045*br;
+    for(let k=0;k<n;k++)raw[k]=Math.random()*2-1;
+    for(let k=0;k<n;k++)b[k]=raw[k]-.6*raw[(k+pp)%n];
+    return t=>{const y=b[i];b[i]=d*.5*(y+b[(i+1)%n]);i=(i+1)%n;
+      const click=t<.004?(Math.random()*2-1)*(1-t/.004)*.35:0;return .22*(y+click);};}
+  if(inst==='chip'){const duty=.5-.375*br;return t=>{ // ファミコン（パルス波）
+    const p=f*t,ph=p-Math.floor(p),e=Math.floor(Math.exp(-4*t/dur)*6)/6;return .1*e*(ph<duty?1:-1);};}
+  if(inst==='ukulele'){ // ウクレレ：ナイロン弦。2本をわずかにずらして重ね、ポロンと明るく軽い音
+    const n1=Math.max(2,Math.round(SR/f)),n2=Math.max(2,Math.round(SR/(f*1.003))),b1=new Float32Array(n1),b2=new Float32Array(n2);let i1=0,i2=0,lp=0;const d=.983+.007*br;
+    for(let k=0;k<n1;k++){lp+=.7*((Math.random()*2-1)-lp);b1[k]=1.6*lp;}
+    for(let k=0;k<n2;k++){lp+=.7*((Math.random()*2-1)-lp);b2[k]=1.6*lp;}
+    return()=>{const y1=b1[i1];b1[i1]=d*.5*(y1+b1[(i1+1)%n1]);i1=(i1+1)%n1;
+      const y2=b2[i2];b2[i2]=d*.5*(y2+b2[(i2+1)%n2]);i2=(i2+1)%n2;return .13*(y1+y2);};}
+  if(inst==='bell'){const R2=[1,2.32,4.25,6.63],A2=[1,.45,.25,.12],D2=[2.4,3.6,5.5,9]; // 風鈴
+    return t=>{let v=0;for(let k=0;k<4;k++){if(f*R2[k]>10000)continue;v+=A2[k]*Math.exp(-D2[k]*t/dur)*Math.sin(TP*f*R2[k]*t);}
+      return .13*Math.min(t/.001,1)*(1+.12*Math.sin(TP*6.5*t))*v;};}
+  if(inst==='steel'){let ph=0; // スチールギター（しゃくり上げ＋ビブラート）
+    return t=>{const vib=1+.004*Math.min(t/.25,1)*Math.sin(TP*5.5*t),sl=1-.06*Math.exp(-t*22);ph+=TP*f*vib*sl/SR;
+      const e=Math.min(t/.008,1)*Math.exp(-2.4*t/dur);return .15*e*(Math.sin(ph)+.35*Math.sin(2*ph)+.12*Math.sin(3*ph));};}
+  const R=[1,2.76,5.4,8.93],A=[1,.35,.18,.08],D=[3,7,13,24]; // オルゴール（金属の櫛の響き）
+  return t=>{let v=0;for(let k=0;k<4;k++){if(f*R[k]>9000)continue;v+=A[k]*(k?.5+br:1)*Math.exp(-D[k]*t/dur)*Math.sin(TP*f*R[k]*t);}
+    return .14*Math.min(t/.002,1)*v;};
+}
+function hits(k,p){const r=[];
+  if(k===1){if(p===0||p===8)r.push(0);if(p===4||p===12)r.push(1);if(p%2===0)r.push(2);}
+  else if(k===2){if(p===0||p===8||p===10)r.push(0);if(p===4||p===12)r.push(1);if(p%2===0)r.push(2);}
+  else if(k===3){if(p===0)r.push(3);if(p===6||p===14)r.push(4);}   // 和風：太鼓は頭だけ＋拍子木
+  else if(k===4){if(p===4||p===12)r.push(1);if(p%4===2)r.push(2);}
+  else if(k===5){if(p%4===0)r.push(0);if(p===4||p===12)r.push(1);if(p%4===2)r.push(2);}
+  else if(k===6){if(p===0||p===8)r.push(0);if(p%4===2)r.push(2);}   // ハワイアン：ゆれるハットだけ。スネアなし
+  return r;}
+function renderSong(refGain){
+  const st=STY[sty],step=60/(BPM[tp]*st.mul)/4,noteLen=step*st.len,total=(N+st.len+3+st.ec*4)*step+.3,frames=Math.floor(total*SR),s=new Float32Array(frames);
+  const mix=(start,len,fn)=>{for(let i=0;i<len;i++){const idx=start+i;if(idx>=frames)break;s[idx]+=fn(i/SR);}};
+  const drum=(k,start,A=1)=>{let ph=0,prev=0;
+    if(k===0)mix(start,.2*SR|0,t=>{ph+=TP*(50+110*Math.exp(-t*28))/SR;return A*.55*Math.exp(-t*16)*Math.sin(ph);});
+    else if(k===1)mix(start,.14*SR|0,t=>A*Math.exp(-t*24)*(.22*(Math.random()*2-1)+.18*Math.sin(TP*190*t)));
+    else if(k===2)mix(start,.05*SR|0,t=>{const nz=Math.random()*2-1,r=A*.09*Math.exp(-t*80)*(nz-prev);prev=nz;return r;});
+    else if(k===4)mix(start,.08*SR|0,t=>A*.26*Math.exp(-t*60)*(Math.sin(TP*1320*t)+.5*Math.sin(TP*1980*t)));   // 拍子木
+    else mix(start,.45*SR|0,t=>{ph+=TP*(62+60*Math.exp(-t*14))/SR;return A*.6*Math.exp(-t*7)*Math.sin(ph);});};
+  const perc=(k,start,A)=>{let prev=0,lp=0;
+    if(k===0)mix(start,.22*SR|0,t=>{const nz=Math.random()*2-1,r=A*(.13*Math.exp(-t*20)*(nz-prev)+.025*(Math.sin(TP*6200*t)+Math.sin(TP*8400*t))*Math.exp(-t*38));prev=nz;return r;});   // タンバリン
+    else if(k===1)mix(start,.2*SR|0,t=>{lp+=.5*((Math.random()*2-1)-lp);return A*.3*(t<.036?Math.exp(-(t%.012)*350):.8*Math.exp(-(t-.036)*26))*lp;});   // クラップ
+    else if(k===2)mix(start,.1*SR|0,t=>{const nz=Math.random()*2-1,r=A*.11*Math.min(t/.01,1)*Math.exp(-t*30)*(nz-prev);prev=nz;return r;});   // シェイカー
+    else if(k===3)mix(start,.1*SR|0,t=>A*.28*Math.exp(-t*55)*(Math.sin(TP*1050*t)+.4*Math.sin(TP*1580*t)));   // ウッドブロック
+    else mix(start,.3*SR|0,t=>A*.15*Math.exp(-t*13)*(tri(540*t)+tri(800*t)));};   // カウベル
+  const root=dominantRoot(),shifts=barShifts(),ct=columnTops(),pcs=percColors(),rank=colorRank(pcs),alt=COMP[st.inst];
+  for(let x=0;x<N;x+=st.hop){
+    const sw=(st.sw&&Math.floor(x/st.hop)%2===1)?st.sw:0,start=Math.floor((x+sw)*step*SR);
+    groupNotes(x,st.hop,root+shifts[Math.floor(x/(N/4))],ct,rank).forEach(nt=>{
+      const nl=noteLen*nt.len,len=Math.floor(nl*SR),s0=start+Math.floor(nt.delay*step*SR),ownLead=nt.lead&&st.li,ins=nt.alt?alt:(ownLead?st.li:st.inst);
+      ((nt.alt||ownLead)?[0]:[0,...st.ex]).forEach((off,k)=>{
+        const f=440*Math.pow(2,(nt.midi+off-69)/12),v=voice(ins,f,nt.br,nl),g=nt.g*(k===0?1:.6);
+        mix(s0+Math.floor(k*(st.sm||0)*SR),len,t=>g*v(t)*Math.min(1,(nl-t)/.02));});});
+  }
+  // ドラム：曲調ごとの基本パターン＋絵の形によるアクセント(アプリ(Swift)と同じ)
+  const bw=N/4,barD=[0,1,2,3].map(b=>{let c=0;for(let y=0;y<N;y++)for(let xx=b*bw;xx<(b+1)*bw;xx++)if(grid[y*N+xx])c++;return c/(bw*N);});
+  // 音のある列の割合：空白の列が多い小節は、ドラムをやわらげる(メロディーが休みなのにドラムだけ目立たないように)
+  const occ=[0,1,2,3].map(b=>{let c=0;for(let xx=b*bw;xx<(b+1)*bw;xx++)if(ct[xx]>=0)c++;return c/bw;});
+  const pcnt={},pres={};pcs.forEach(v=>{pcnt[v]=0;pres[v]=new Uint8Array(N);});
+  for(let y=0;y<N;y++)for(let x=0;x<N;x++){const v=grid[y*N+x];if(pres[v]){pcnt[v]++;pres[v][x]=1;}}
+  const pbar=[0,0,0,0];   // 1小節あたりの打楽器の数(ごちゃつき防止の上限10)
+  let lastKick=-99;   // 追加のキックは3ステップ以上あける(ごちゃつき防止)
+  for(let x=0;x<N;x++){
+    const bar=Math.floor(x/bw),p=x%16;let hs=hits(st.dr,p);
+    if(st.dr!==0){
+      if(barD[bar]<.03)hs=hs.filter(k=>k!==2);
+      const jp=(x>0&&ct[x]>=0&&ct[x-1]>=0)?Math.abs(ct[x]-ct[x-1]):0;
+      if(jp>=4&&st.dr!==3&&x%2===1&&!hs.includes(2))hs.push(2);
+      const kick=st.dr===3?3:0;if(jp>=9&&x-lastKick>=3&&!hs.includes(kick)){hs.push(kick);lastKick=x;}
+      if(bar===3&&barD[bar]>.15&&p>=12){const fl=st.dr===3?3:1;if((st.dr!==3||p%2===0)&&!hs.includes(fl))hs.push(fl);}
+    }
+    const bA=.5+.5*Math.min(1,occ[bar]/.9),A=ct[x]<0?bA*.7:bA;   // 空白の列では、さらに少し弱める
+    hs.forEach(k=>drum(k,Math.floor(x*step*SR),A*(st.dr===2?1.5:1)));
+    pcs.forEach(v=>{const k=PC[v];
+      if(!PPAT[k](p)||!pres[v][x]||hs.some(h=>h===0||h===1||h===3)||pbar[bar]>=10)return;   // キック・スネア・太鼓と重ねない
+      pbar[bar]++;perc(k,Math.floor(x*step*SR),A*(.55+.45*Math.min(1,pcnt[v]/200)));});
+  }
+  if(st.ec>0){const d=Math.floor(st.ec*step*SR);for(let i=d;i<frames;i++)s[i]+=st.ef*s[i-d];}
+  let e=0;for(let i=0;i<frames;i++)e+=s[i]*s[i];
+  const own=Math.min(5,.17/Math.max(Math.sqrt(e/frames),1e-6)),gain=refGain||own;   // refGain: 4方向で音量の基準をそろえる
+  for(let i=0;i<frames;i++)s[i]=Math.tanh(s[i]*gain);
+  return{s,total,step,gain:own};
+}
+</script>
+<script>
+const $=id=>document.getElementById(id);
+let playing=false,playCol=-1;
+// 読む向き：0=左→右(いままで) 1=上→下 2=右→左 3=下→上。ループの1周ごとに順番にかわる(アプリと同じ)
+let dir=0;const pgrids=[null,null,null,null];
+// 絵を回して「時間=列、音の高さ=行」の形にそろえる(アプリ(Swift)の orientedGrid と同じ)
+const ctx=$('c').getContext('2d');
+
+function decode(s){
+  const b=Uint8Array.from(atob(s.replace(/-/g,'+').replace(/_/g,'/')),c=>c.charCodeAt(0));
+  const g=new Uint8Array(N*N);
+  if(b[0]===0){for(let i=0;i<N*N;i++){const v=b[H+(i>>1)];g[i]=(i&1)?v&15:v>>4;}}
+  else{let p=H,i=0;while(p<b.length&&i<N*N){const v=(b[p]<<8)|b[p+1];p+=2;const run=(v&4095)+1;g.fill(v>>12,i,i+run);i+=run;}}
+  for(let k=0;k<3;k++)COL[13+k]='#'+[0,1,2].map(m=>b[3+k*3+m].toString(16).padStart(2,'0')).join('');
+  grid=g;sty=Math.min(STY.length-1,b[1]);tp=Math.min(2,b[2]);
+}
+function render(){
+  const S=10;ctx.fillStyle=getComputedStyle(document.documentElement).getPropertyValue('--cv').trim();ctx.fillRect(0,0,640,640);
+  for(let y=0;y<N;y++)for(let x=0;x<N;x++){const v=grid[y*N+x];if(v&&COL[v]){ctx.fillStyle=COL[v];ctx.fillRect(x*S,y*S,S+.4,S+.4);}}
+  if(playCol>=0){
+    const PG=pgrids[dir]||grid,horiz=(dir===1||dir===3);
+    // 回した絵の「時間u・音の高さv(マス単位)」を、画面の座標にもどす(アプリの displayPoint と同じ)
+    const dpt=(u,v)=>dir===0?[u*S,v*S]:dir===2?[(N-u)*S,v*S]:dir===1?[(N-v)*S,u*S]:[(N-v)*S,(N-u)*S];
+    const g=horiz?ctx.createLinearGradient(0,0,640,0):ctx.createLinearGradient(0,0,0,640);
+    g.addColorStop(0,'rgba(255,111,165,.45)');g.addColorStop(1,'rgba(106,141,255,.45)');ctx.fillStyle=g;
+    if(dir===0)ctx.fillRect(playCol*S,0,S,640);
+    else if(dir===2)ctx.fillRect((N-playCol-1)*S,0,S,640);
+    else if(dir===1)ctx.fillRect(0,playCol*S,640,S);
+    else ctx.fillRect(0,(N-playCol-1)*S,640,S);
+    {const hb=STY[sty].hop;ctx.beginPath();let f=true;
+      for(let c=0;c<=playCol;c+=hb*2){const r=bassRow(c,PG);if(r===null)continue;const[px,py]=dpt(c+hb/2,r+.5);if(f){ctx.moveTo(px,py);f=false;}else ctx.lineTo(px,py);}
+      ctx.lineJoin=ctx.lineCap='round';ctx.strokeStyle='rgba(255,255,255,.9)';ctx.lineWidth=5;ctx.stroke();ctx.strokeStyle='#00ecd5';ctx.lineWidth=3;ctx.stroke();
+      const rb=bassRow(playCol,PG);if(rb!==null){const[bx,by]=dpt(playCol+.5,rb+.5);ctx.beginPath();ctx.arc(bx,by,S*1.1,0,Math.PI*2);ctx.fillStyle='#fff';ctx.fill();ctx.lineWidth=3;ctx.strokeStyle='#00ecd5';ctx.stroke();}}
+    const h=STY[sty].hop;ctx.beginPath();let first=true;
+    for(let c=0;c<=playCol;c+=h){const r=leadRow(c,PG);if(r===null)continue;const[px,py]=dpt(c+h/2,r+.5);if(first){ctx.moveTo(px,py);first=false;}else ctx.lineTo(px,py);}
+    ctx.lineJoin=ctx.lineCap='round';ctx.strokeStyle='rgba(255,255,255,.9)';ctx.lineWidth=5;ctx.stroke();ctx.strokeStyle='#ff4f93';ctx.lineWidth=2.5;ctx.stroke();
+    const r=leadRow(playCol,PG);if(r!==null){const[lx,ly]=dpt(playCol+.5,r+.5);ctx.beginPath();ctx.arc(lx,ly,S*1.3,0,Math.PI*2);ctx.fillStyle='#fff';ctx.fill();ctx.lineWidth=3;ctx.strokeStyle='#ff4f93';ctx.stroke();}}
+}
+// ---- 絵 → 音 ----
+// リード＝絵の輪郭（各列でいちばん上のドット）、ハーモニー＝使った色、ベース＝絵の底、
+// 音量＝絵の濃さ、空白の列＝休符、キー＝いちばん多く使った色
+function leadRow(col,G=grid){const h=STY[sty].hop,x=Math.floor(col/h)*h,t=[];
+  for(let xx=x;xx<Math.min(N,x+h);xx++)for(let y=0;y<N;y++)if(G[y*N+xx]){t.push(y);break;}
+  return t.length?t.reduce((a,b)=>a+b)/t.length:null;}
+function bassRow(col,G=grid){const h=STY[sty].hop;let x=Math.floor(col/h)*h;if((x/h)%2)x-=h;const t=[];
+  for(let xx=x;xx<Math.min(N,x+h);xx++)for(let y=N-1;y>=0;y--)if(G[y*N+xx]){t.push(y);break;}
+  return t.length?t.reduce((a,b)=>a+b)/t.length:null;}
+let ac=null,parts=[],segs=[],nextT=0,nextI=0,Lsec=0,loopOn=true,playGen=0,pump=null;
+const mk=a=>{const b=ac.createBuffer(1,a.length,SR);b.copyToChannel(a,0);return b;};
+const LOOK=2;   // 次のパートを、始まる2秒前までに予約する(タブが裏にまわっても途切れにくくする)
+// d番目の向きのパートを時刻tから流す。余韻はそのまま次のパートの頭に重なる(つなぎ目なし)
+function schedule(d,t){
+  const g=ac.createGain(),src=ac.createBufferSource();
+  src.buffer=parts[d].buf;src.connect(g);g.connect(ac.destination);src.start(t);
+  segs.push({t,d,src,g});if(segs.length>8)segs.shift();
+}
+// ---- 曲を作る ----
+// 向きごとの曲は、画面とは別の「ワーカー」(裏の計算係)で作る。画面は止まらない。
+// 使えない環境では、少しずつ時間をあけて、いつもの renderSong で作る。
+const WORKER_TAIL=`
+onmessage=e=>{const m=e.data;
+ for(let k=0;k<3;k++)COL[13+k]=m.custom[k];
+ sty=m.sty;tp=m.tp;grid=orient(m.grid,m.d);
+ const r=renderSong(m.ref);
+ postMessage({id:m.id,d:m.d,s:r.s,total:r.total,step:r.step,gain:r.gain},[r.s.buffer]);};`;
+let worker=null;
+function startWorker(my){
+  try{
+    worker=new Worker(URL.createObjectURL(new Blob([document.getElementById('core').textContent+WORKER_TAIL],{type:'text/javascript'})));
+    worker.onmessage=e=>accept(e.data,my);
+    worker.onerror=()=>{worker=null;if(playing&&my===playGen)for(let d=0;d<4;d++)if(!parts[d])ask(d,my,parts[0]&&parts[0].gain,d?400+(d-1)*700:0);};
+  }catch(err){worker=null;}
+}
+function ask(d,my,ref,delay=0){
+  pgrids[d]=orient(grid,d);
+  if(worker){worker.postMessage({id:my,d,grid:grid.slice(),custom:[COL[13],COL[14],COL[15]],sty,tp,ref});return;}
+  setTimeout(()=>{
+    if(!playing||my!==playGen)return;
+    const g0=grid;grid=pgrids[d];let r;try{r=renderSong(ref);}finally{grid=g0;}
+    r.d=d;r.id=my;accept(r,my);},delay);
+}
+// できあがったパートを受けとる。「左→右」が届いたら、すぐ鳴らしはじめる
+function accept(r,my){
+  if(!playing||my!==playGen||parts[r.d])return;
+  r.buf=mk(r.s);parts[r.d]=r;
+  if(r.d===0)began(my);
+}
+// まだ始まっていない予約を取り消す(ループをオフにしたとき)
+function cancelFuture(){
+  const now=ac.currentTime;
+  while(segs.length>1&&segs[segs.length-1].t>now+.03){
+    const s=segs.pop();try{s.src.stop();}catch(e){}nextT=s.t;nextI--;}
+}
+function stopAll(){
+  playing=false;playCol=-1;playGen++;
+  if(worker){worker.terminate();worker=null;}
+  if(pump){clearInterval(pump);pump=null;}
+  if(ac){const n=ac.currentTime;segs.forEach(s=>{try{s.g.gain.cancelScheduledValues(n);s.g.gain.setValueAtTime(s.g.gain.value,n);s.g.gain.linearRampToValueAtTime(0,n+.1);s.src.stop(n+.12);}catch(e){}});}
+  segs=[];dir=0;render();$('play').textContent='▶ きょくをきく';making(false);
+}
+// 曲を作っている間のアニメーション(ボタン・キャンディ・音符)のオン／オフ
+function making(on){
+  $('play').classList.toggle('busy',on);document.body.classList.toggle('making',on);
+  $('msg').innerHTML=on?'<span class="n">♪</span> <span class="n">♫</span> <span class="n">♪</span>':'';
+}
+function play(){
+  if(playing){stopAll();return;}
+  playing=true;$('play').textContent='つくっています…';making(true);
+  ac=ac||new (window.AudioContext||window.webkitAudioContext)();ac.resume();
+  // iPhoneは、タップのその場で一度音を出しておかないと、あとから鳴らせないことがあるため、無音をひとつ流す
+  try{const u=ac.createBufferSource();u.buffer=ac.createBuffer(1,1,22050);u.connect(ac.destination);u.start(0);}catch(e){}
+  setTimeout(go,40);
+}
+function go(){
+  if(!playing)return;
+  const my=++playGen;
+  parts=[];segs=[];dir=0;
+  startWorker(my);
+  ask(0,my);                                      // まず「左→右」だけ作って、できしだい鳴らしはじめる
+}
+function began(my){
+  Lsec=Math.floor(N*parts[0].step*SR)/SR;
+  const t0=ac.currentTime+.05;
+  schedule(0,t0);nextT=t0+Lsec;nextI=1;
+  $('play').textContent='■ とめる';making(false);
+  // 残りの向き(上→下、右→左、下→上)は、鳴らしながら順に作る。音量の基準は「左→右」にそろえる
+  [1,2,3].forEach(d=>ask(d,my,parts[0].gain,400+(d-1)*700));
+  // ループ中は、1周ごとに 左→右 → 上→下 → 右→左 → 下→上 と向きをかえて、つぎのパートを予約していく
+  pump=setInterval(()=>{
+    if(!playing||my!==playGen)return;
+    const now=ac.currentTime;
+    if(loopOn&&now>=nextT-LOOK){
+      if(nextT<now+.03)nextT=now+.05;
+      let d=0;for(let k=0;k<4;k++){const c=(nextI+k)%4;if(parts[c]){d=c;break;}}   // まだ作っていない向きは、あるものでつなぐ
+      schedule(d,nextT);nextT+=Lsec;nextI++;
+    }
+  },250);
+  (function loop(){
+    if(!playing||my!==playGen)return;
+    const now=ac.currentTime,last=segs[segs.length-1];
+    if(!loopOn&&now>last.t+parts[last.d].total){stopAll();return;}
+    let cur=segs[0];for(const s of segs)if(s.t<=now)cur=s;
+    dir=cur.d;const e=now-cur.t;
+    if(e<0)playCol=0;
+    else if(loopOn||e<Lsec)playCol=Math.min(N-1,Math.floor(e/parts[cur.d].step));
+    else playCol=-1;
+    render();requestAnimationFrame(loop);})();
+}
+$('loop').onclick=()=>{
+  loopOn=!loopOn;$('loop').classList.toggle('on',loopOn);
+  if(playing&&ac&&segs.length&&!loopOn)cancelFuture();
+};
+$('play').onclick=play;
+// ホーム画面にもどす・ほかのアプリやタブにうつる・画面ロックなど、ページが見えなくなったら音をとめる
+function hushWhenHidden(){if(playing)stopAll();if(ac&&ac.state==='running')setTimeout(()=>{if(!playing)ac.suspend();},400);}
+document.addEventListener('visibilitychange',()=>{if(document.hidden)hushWhenHidden();});
+window.addEventListener('pagehide',hushWhenHidden);
+let ok=false;
+try{const h=location.hash.match(/d=([\w-]+)/);if(h){decode(h[1]);ok=grid.some(v=>v);}}catch(e){}
+if(ok){render();$('info').textContent='きょくちょう：'+STY[sty].n;}
+else{$('art').style.display='none';$('play').parentNode.style.display='none';$('info').style.display='none';$('empty').style.display='block';}
+
+
+// お菓子を画面全体にばらまく（x,y は画面の%、w は幅px、r は回転）
+(function(){
+  // 色ちがい：マカロン(ピンク/ブルー/イエロー)、ペロペロキャンディ(ピンク/イエロー)。左右どちらにも混ぜる
+  const CO={pink:['#ffb8de','#ee94c2'],blue:['#9ed6f7','#73b3e0'],yellow:['#fff28c','#f7de66']};
+  const L=[['s1',6,6,44,-14],['s2',86,5,34,12],['s3',21,19,50,-10,'pink'],['s3',74,17,50,12,'yellow'],['s5',4,24,42,-12],
+    ['s6',91,26,26,14],['s1',80,31,30,30],['s5',72,3,28,20],['s3',11,35,34,8,'blue'],['s3',88,38,36,-8,'blue'],
+    ['s2',2,43,26,-20],['s6',3,52,22,-10,'yellow'],['s1',93,70,34,8],['s3',1,62,38,-14,'yellow'],['s5',3,80,30,16],['s3',92,86,32,-6,'pink'],['s3',86,56,30,14,'blue']];
+  const box=document.createElement('div');box.className='deco';
+  L.forEach(([k,x,y,w,r,c])=>{
+    let src=document.querySelector('#src .'+k);
+    const t=document.createElement('div');let html=src.outerHTML;
+    if(k==='s3'&&c){html=html.split('#ffb8de').join(CO[c][0]).split('#ee94c2').join(CO[c][1]);}
+    if(k==='s6'&&c==='yellow'){html=html.split('#ffabd8').join('#ffbf00').split('#ff93cc').join('#f7a300');}
+    t.innerHTML=html;const s=t.firstChild;
+    s.setAttribute('class','');
+    s.style.cssText='left:'+x+'%;top:'+y+'%;width:calc('+w+'px*(.6 + var(--f)*.6));transform:rotate('+r+'deg)';
+    s.dataset.r=r;s.dataset.k=k;s.addEventListener('click',()=>boing(s));
+    box.appendChild(s);});
+  document.body.insertBefore(box,document.body.firstChild);
+})();
+// お菓子をさわると、種類ごとにちがう動きをする（アプリのトップ画面と同じ）
+// s1クッキー=ぷくっ / s2チョコ=ぴょん / s3マカロン=ぷるぷる / s5星クッキー=くるっ / s6ペロペロキャンディ=ゆらゆら
+function boing(el){
+  if(window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  const r=+el.dataset.r||0,k=el.dataset.k,j=Math.max(14,el.getBoundingClientRect().width*.5);
+  const T=(x,y,a,sx,sy)=>'translate('+x+'px,'+y+'px) rotate('+(r+a)+'deg) scale('+sx+','+sy+')';
+  let F,D=650;
+  if(k==='s1'){F=[[0,0,0,1,1],[0,0,0,1.5,1.5],[0,0,0,1.4,1.4],[0,0,0,.95,.95],[0,0,0,1,1]];}
+  else if(k==='s2'){F=[[0,0,0,1.12,.82],[0,-j,5,.94,1.1],[0,0,-4,1.08,.9],[0,-j*.3,2,.98,1.04],[0,0,0,1,1]];}
+  else if(k==='s5'){F=[[0,0,0,1,1],[0,-j,180,1.05,1.05],[0,0,360,1,1]];D=520;}
+  else if(k==='s6'){F=[0,16,-14,10,-6,3,0].map(a=>[a*.3,0,a,1,1]);D=900;}
+  else{F=[[0,0,0,1,1],[0,0,0,1.28,.72],[0,0,0,.84,1.2],[0,0,0,1.14,.88],[0,0,0,.94,1.07],[0,0,0,1,1]];D=600;}
+  if(el._a)el._a.cancel();
+  el._a=el.animate(F.map(a=>({transform:T(...a)})),{duration:D,easing:'ease-in-out'});
+  try{   // ぽよんと小さな音
+    ac=ac||new (window.AudioContext||window.webkitAudioContext)();ac.resume();
+    const o=ac.createOscillator(),g=ac.createGain(),t=ac.currentTime;
+    o.type='sine';o.frequency.setValueAtTime(520,t);o.frequency.exponentialRampToValueAtTime(900,t+.09);
+    g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.12,t+.01);g.gain.exponentialRampToValueAtTime(.0001,t+.18);
+    o.connect(g);g.connect(ac.destination);o.start(t);o.stop(t+.2);
+  }catch(e){}
+}
+// 画面の高さに合わせて、飾りの大きさ(--f)を決める：キャンバスを先にとり、残りをキャンディにあてる
+function fit(){
+  const cs=getComputedStyle(document.body),vh=window.innerHeight,
+    wc=Math.min(window.innerWidth*.94-26,494),
+    rest=vh-parseFloat(cs.paddingTop)-parseFloat(cs.paddingBottom)-182-wc,
+    f=Math.max(.4,Math.min(.65,rest/(1.59*190)));
+  document.documentElement.style.setProperty('--f',f.toFixed(3));
+}
+fit();addEventListener('resize',fit);addEventListener('orientationchange',fit);
+</script>
+<!-- アクセス数：GoatCounter(無料)。登録済み: yuuki-furuta20 -->
+<script data-goatcounter="https://yuuki-furuta20.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body></html>
