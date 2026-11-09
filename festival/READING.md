@@ -9,50 +9,156 @@
 > 💡 担任の先生の指示で、項目が増えることがあります。
 
 ---
+[音描]
 
-## 箇所1：（例：品名を追加するボタンの処理）
+
+## 箇所1：（トップ画面からチュートリアルへの画面遷移）
 
 ```swift
 // 該当部分のコードを抜粋して貼る（5〜15行くらい）
 ```
+```
+choiceButton("あそび方を見る", ...) { onStart(true) }     　// 3091行目 TopView:ボタンを押す
+TopView { tutorial in m.start(tutorial: tutorial) }      // 3130行目 ContentView:受け取って start を呼ぶ
+screen = .create                                         // 1238行目 start:作成画面へ切り替える
+tutorialStep = tutorial ? .pen : nil                     // 1239行目 start:チュートリアルを最初の手順から始める
+```
 
 **何をしているか：**
 （この部分が果たしている役割を説明する）
+トップ画面で「あそび方を見る」を押すと作成画面に進んでチュートリアルが始まる。「すぐかく」を押すとチュートリアルなしで作成画面に進む。
+
+ボタンを押した時に起こる仕事は3つ。
+1. トップ画面のボタン:「どちらを押したか」を伝えるだけ(onStart(true) か onStart(false))
+2. 受け取る場所(3130行目):その結果を start という関数に渡す
+3. start 関数:実際に、作成画面に切り替えて、チュートリアルを始める
 
 **なぜこう書くのか：**
 （別の書き方ではなく、この書き方が選ばれている理由を説明する。分からなければ「分からない」と書いてよい）
+ボタンに画面を切り替える機能まで入れない。そうすれば画面を切り替える仕事が start の1か所にまとまるので直す時にここだけ見ればよくなるから。
+
 
 **もしこう書かなかったら：**
 （この部分を消したり変えたりすると何が起きるか。実際に試した結果があればここに書く）
-
+tutorialStep = tutorial ? .pen : nil を tutorialStep = nil に変えると、「あそび方を見る」を押してもチュートリアルが始まらない……？
 ---
 
-## 箇所2：（見出し）
+## 箇所2：（背景のランダム化）
 
 ```swift
 // コードを貼る
 ```
+```
+if let last = UserDefaults.standard.object(forKey: Self.key) as? Int {
+    variant = (last + Int.random(in: 1..<n)) % n       // 前回とはちがうものから始める
+} else { variant = Int.random(in: 0..<n) }
+UserDefaults.standard.set(variant, forKey: Self.key)   // 今回の番号を端末に保存
+```
+
 
 **何をしているか：**
+前回の背景の番号を端末から読みこんで1以上を足して(5種類で割った余りを取って)今回の番号にする。初回はランダム。今回の番号を保存する。
+
 
 **なぜこう書くのか：**
+ただのランダムだと同じ背景が続くことがあるから。1..<(1以上)を足すと必ず前回と違う番号にできる。
+
 
 **もしこう書かなかったら：**
+1..<n を 0..<n に変えると前回と同じ背景になることがある。
 
 ---
 
-## 箇所3：（見出し）
+## 箇所3：（お菓子のリアクション音声のランダム化）
 
 ```swift
 // コードを貼る
 ```
+```
+if let last = okashiLastPitch { candidates.removeAll { $0 == last } }                 // 前回と同じ高さを除く
+let base = candidates.randomElement() ?? 0                                            // 残りからランダムに高さを選ぶ
+voice.pitch.pitch = base + Float.random(in: -Self.okashiDetune...Self.okashiDetune)   // ほんの少しゆらす
+voice.player.volume = Float.random(in: Self.okashiVolumeRange)                        // 音量もランダム
+```
 
 **何をしているか：**
+同じ音源をお菓子をさわるたびに高さと音量を変えて鳴らす。
+
+**なぜこう書くのか：**
+前回の高さを先に候補から除いてから選ぶため。「選んでから前回と同じなら選び直す」書き方だと何度も繰り返す可能性があるが先に除けば選ぶのは1回で済む。
+⚠︎?? 0をつけているのは、randomElement()が候補が空の時に nil を返すため。nil のまま使うとエラーになるのでその時は 0(高さを変えない)にしている。
+
+
+**もしこう書かなかったら：**
+１行目を消すと同じ高さが続くことがある。
+
+
+
+[何食べようかな]
+
+
+
+## 箇所1:BGMのループと音量調整(BGMPlayer.swift)
+
+```
+private let baseVolume: Float = 0.28      // 通常時
+private let duckedVolume: Float = 0.12    // 抽選中・結果発表中
+private var targetVolume: Float { isDucked ? duckedVolume : baseVolume }
+player?.numberOfLoops = -1                // 無限ループ
+```
+
+**何をしているか：**
+cafe.mp3 を無限にループ再生。音量は通常0.28で、抽選中と結果発表中だけ0.12に下げる。
 
 **なぜこう書くのか：**
 
-**もしこう書かなかったら：**
+ switch は文字列の場合default(どれにも当てはまらない時)を書かないとエラーになるから。
 
+
+**もし書かなかったら：**
+numberOfLoops = -1 を消すとBGMが1回流れて終わる。0.28を1.0にすると効果音が聞こえにくくなるかも。
+
+---
+
+## 箇所2:（気分ごとのエフェクト）
+
+```
+switch title {
+case "自分へのご褒美":  return .gold        // 金のキラキラ
+case "乾杯パーティー":  return .confetti    // 紙吹雪と泡
+case "ストレス発散":    return .flame     　// 炎と火花
+default:               return .rainbow  　// それ以外
+}
+```
+
+**何をしているか：**
+選んだ気分の名前を見てどの演出(金・紙吹雪・炎など)にするかを決める。
+
+**なぜこう書くのか：**
+気分の名前で道を分ける switch を使うと気分と演出の対応が1か所にまとめて見える。データのファイル(MoodTagJson.swift)を変えずに済む。
+
+**もし書かなかったら：**
+「ストレス発散」の行を消すとその気分は default の .rainbow(カラフル)になる
+
+---
+
+## 箇所3:（振った強さの、振動への反映)
+
+```swift
+let intensity = max(0.45, motion.consumeShakeIntensity())              　// 振りの強さ(0〜1)。最低0.45
+if i < 5 { Feedback.impact(.heavy, intensity: 0.6 + 0.4 * intensity) } 　// 強く振るほど、強い振動
+guard hapticsEnabled else { return }                                  　 // 設定でOFFなら振動しない
+```
+
+**何をしているか：**
+センサーで測った振りの強さ(0〜1)を振動の強さに反映。強く振ると強い振動になる。設定画面で触覚がOFFの時は振動しない。
+
+**なぜこう書うのか：**
+0.6 + 0.4 * intensity で弱く振っても0.6の強さは出て強く振ると最大1.0になる。ボタンで抽選した時も max(0.45, ...) で最低の強さをキープする。OFFの確認を Feedback に集めるとどこから呼んでも設定が守られる。
+
+**もし書かなかったら：**
+0.6 + 0.4 * intensity を 1.0 に固定すると振る強さに関係なく同じ強さの振動になる。guard の行を消すと設定でOFFにしても振動する。
+```
 ---
 
 ## 自分ではまだ説明できない箇所（正直に）
