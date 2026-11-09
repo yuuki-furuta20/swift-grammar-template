@@ -41,7 +41,7 @@ tutorialStep = tutorial ? .pen : nil                     // 1239行目 start:チ
 **もしこう書かなかったら：**
 （この部分を消したり変えたりすると何が起きるか。実際に試した結果があればここに書く）
 tutorialStep = tutorial ? .pen : nil を tutorialStep = nil に変えると、「あそび方を見る」を押してもチュートリアルが始まらない……？
----
+
 
 ## 箇所2：（背景のランダム化）
 
