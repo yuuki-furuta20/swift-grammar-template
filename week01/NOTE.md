@@ -1,7 +1,7 @@
 l、l、；。、。。、・、。# week01 型と制御構文の再確認、配列・辞書・範囲
 
 > **氏名：** （26cm0129 古田裕稀)  
-> **最終更新：** 2026-11-016  
+> **最終更新：** 2026-11-16  
 > **AI利用レベル：** 演習は 2（生成コード可・4点セット必須）  
 > **リファレンス：** swift-grammar-code の `reference/01_basics.md`  
 > https://github.com/NakasenJEC/swift-grammar-code/blob/main/reference/01_basics.md
@@ -76,6 +76,7 @@ var highScorers = 0 を let highScorers = 0 に変えると、+= 1 で値を増�
 ### Q1
 
 **質問：**
+
 for (_, score) in scoreOf {
     if score >= 80 {
         highScorers += 1
